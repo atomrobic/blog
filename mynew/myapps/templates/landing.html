@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Start Global Rules */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            padding: 0 15px;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        /* Start Landing Page */
+        .landing-page header {
+            background: #f9f6f6;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .landing-page .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .landing-page .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ca5252;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        .links {
+            display: flex;
+            gap: 20px;
+        }
+        .links li {
+            color: #5d5d5d;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .links li a:hover {
+            color: #6c63ff;
+        }
+        .cta {
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: #6c63ff;
+            color: #fff;
+        }
+        .cta a {
+            color: #fff;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Content */
+        .landing-page .content .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            min-height: 80vh;
+            padding: 50px 0;
+        }
+        .landing-page .content .info h1 {
+            font-size: 44px;
+            color: #333;
+        }
+        .landing-page .content .info p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .landing-page .content .info button {
+            border: none;
+            border-radius: 20px;
+            padding: 12px 30px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #6c63ff;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .landing-page .content .info button:hover {
+            background-color: #554fd8;
+        }
+        .landing-page .content .image img {
+            max-width: 100%;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 16px;
+            color: #555;
+        }
+        .testimonial h4 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+
+        }
+        b{
+            font-family: 'Times New Roman', Times, serif;
+             font-style: oblique;
+            color: #2eb655;
+        }
+        .testimonials {
+            background: #f0f0f5; /* Change this to your preferred color */
+            padding: 60px 0;
+            text-align: center;
+        }
+        @media (max-width: 767px) {
+            .landing-page .content .image {
+                display: none;
+            }
+        }
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .landing-page .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: #fff;
+                width: 100%;
+                left: 0;
+                top: 60px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .landing-page .content .container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .landing-page .content .info {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start Landing Page -->
+    <div class="landing-page">
+        <header>
+            <div class="container">
+                <a href="#" class="logo"><i class="fa-brands fa-studiovinari"></i><b>Website</b></a>
+                <nav>
+                    <ul class="links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Work</a></li>
+                        <li><a href="#">Info</a></li>
+                        <li class="cta"><a href="#">Get Started</a></li>
+                    </ul>
+                    <div class="menu-toggle">&#9776;</div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="container">
+                <div class="info">
+                    <h1>Student Management System</h1>
+                    <p>Effortlessly manage student records, track performance, and streamline administrative tasks with our efficient system.</p>
+                    <button>Get Started</button>
+                </div>
+                <div class="image">
+                    <img src="https://www.louisvillecardinal.com/media/2022/11/Depositphotos_122104490_S.jpg.webp" alt="Illustration">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Landing Page -->
+
+    <!-- Start Testimonials Section -->
+    <section class="testimonials bg-light">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+                <p>"This system made student management seamless and easy. Highly recommend!"</p>
+                <h4>John Doe</h4>
+            </div>
+          
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User">
+                <p>"A must-have for any school. The features are outstanding and easy to use!"</p>
+                <h4>Jane Smith</h4>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User">
+                <p>"A must-have for any school. The features are outstanding and easy to use!"</p>
+                <h4>Jane Smith</h4>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User">
+                <p>"A must-have for any school. The features are outstanding and easy to use!"</p>
+                <h4>Jane Smith</h4>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".links");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+});
+</script>
+</body>
+</html>
